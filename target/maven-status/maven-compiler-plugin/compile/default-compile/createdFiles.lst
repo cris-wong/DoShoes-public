@@ -1,0 +1,4 @@
+shop\doshoes\util\SessionUtils.class
+shop\doshoes\util\DataConnect.class
+shop\doshoes\dao\LoginDAO.class
+shop\doshoes\beans\CustomerManagedBean.class
