@@ -113,33 +113,33 @@ public class CustomerManagedBean implements Serializable {
 		this.zip = zip;
 	}
 
-	//validate login
-	public String validateEmailPassword() {
-		boolean valid = LoginDAO.validate(email, password);
-		if (valid) {
-			HttpSession session = SessionUtils.getSession();
-			session.setAttribute("email", email);
-			session.setAttribute("firstname", firstname);
-			session.setAttribute("lastname", lastname);
-			session.setAttribute("address", address);
-			session.setAttribute("state", state);
-			session.setAttribute("zip", zip);
-			return "index";
-		} else {
-			FacesContext.getCurrentInstance().addMessage(
-					null,
-					new FacesMessage(FacesMessage.SEVERITY_WARN,
-							"Incorrect Email and Password",
-							"Please enter correct Email and Password"));
-			return "login";
-		}
-	}
-
-	//logout event, invalidate session
-	public String logout() {
-		HttpSession session = SessionUtils.getSession();
-		session.invalidate();
-		return "login";
-	}
+//	//validate login
+//	public String validateEmailPassword() {
+//            boolean valid = LoginDAO.validate(email, password);
+//            if (valid) {
+//                    HttpSession session = SessionUtils.getSession();
+//                    session.setAttribute("email", email);
+//                    session.setAttribute("firstname", firstname);
+//                    session.setAttribute("lastname", lastname);
+//                    session.setAttribute("address", address);
+//                    session.setAttribute("state", state);
+//                    session.setAttribute("zip", zip);
+//                    return "index";
+//            } else {
+//                    FacesContext.getCurrentInstance().addMessage(
+//                                    null,
+//                                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+//                                                    "Incorrect Email and Password",
+//                                                    "Please enter correct Email and Password"));
+//                    return "login";
+//            }
+//	}
+//
+//	//logout event, invalidate session
+//	public String logout() {
+//		HttpSession session = SessionUtils.getSession();
+//		session.invalidate();
+//		return "login";
+//	}
 	
 }

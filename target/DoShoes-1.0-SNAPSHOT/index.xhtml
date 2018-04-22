@@ -24,7 +24,7 @@
                         <b:navLink rendered="#{empty custBean.firstname}" value="Register" href="faces/signup.xhtml"></b:navLink>
                         <b:dropMenu rendered="#{not empty custBean.firstname}" iconAwesome="fa-user" icon-align="right" value="Welcome #{custBean.firstname}">'
                             <h:form>
-                                <b:commandButton look="danger" value="Log Out" action="#{custBean.logout()}" style="width:100%"></b:commandButton>
+                                <b:commandButton look="danger" value="Log Out" action="#{customerController.logout()}" style="width:100%"></b:commandButton>
                             </h:form>
                         </b:dropMenu> 
                     </b:navbarLinks>

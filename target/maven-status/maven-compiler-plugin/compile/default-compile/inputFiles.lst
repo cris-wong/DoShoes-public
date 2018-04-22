@@ -1,4 +1,8 @@
-D:\Users\Chris\OneDrive\Illinois State University\IT 358 Mobile and Cloud Computing (Spring 18)\DoShoes\src\main\java\shop\doshoes\util\DataConnect.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 358 Mobile and Cloud Computing (Spring 18)\DoShoes\src\main\java\shop\doshoes\beans\CustomerManagedBean.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 358 Mobile and Cloud Computing (Spring 18)\DoShoes\src\main\java\shop\doshoes\dao\LoginDAO.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 358 Mobile and Cloud Computing (Spring 18)\DoShoes\src\main\java\shop\doshoes\util\SessionUtils.java
+D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\jpaejb\AbstractFacade.java
+D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\entities\Customer.java
+D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\dao\LoginDAO.java
+D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\util\SessionUtils.java
+D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\beans\CustomerManagedBean.java
+D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\jpaejb\CustomerFacade.java
+D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\beans\CustomerController.java
+D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\util\DataConnect.java
