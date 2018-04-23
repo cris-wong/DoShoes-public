@@ -1,8 +1,12 @@
+shop\doshoes\beans\ProductManagedBean.class
 shop\doshoes\jpaejb\CustomerFacade.class
 shop\doshoes\util\DataConnect.class
-shop\doshoes\beans\CustomerManagedBean.class
-shop\doshoes\jpaejb\AbstractFacade.class
 shop\doshoes\util\SessionUtils.class
 shop\doshoes\entities\Customer.class
+shop\doshoes\jpaejb\ProductFacade.class
+shop\doshoes\entities\Product.class
+shop\doshoes\beans\CustomerManagedBean.class
+shop\doshoes\beans\ProductController.class
+shop\doshoes\jpaejb\AbstractFacade.class
 shop\doshoes\beans\CustomerController.class
 shop\doshoes\dao\LoginDAO.class

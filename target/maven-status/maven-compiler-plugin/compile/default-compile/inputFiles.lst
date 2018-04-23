@@ -1,8 +1,12 @@
-D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\jpaejb\AbstractFacade.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\entities\Customer.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\dao\LoginDAO.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\util\SessionUtils.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\beans\CustomerManagedBean.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\jpaejb\CustomerFacade.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\beans\CustomerController.java
-D:\Users\Chris\OneDrive\Illinois State University\IT 495 IT Capstone (Spring 18)\DoShoes\src\main\java\shop\doshoes\util\DataConnect.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\beans\ProductManagedBean.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\util\DataConnect.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\util\SessionUtils.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\dao\LoginDAO.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\entities\Product.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\beans\ProductController.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\jpaejb\AbstractFacade.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\beans\CustomerController.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\entities\Customer.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\beans\CustomerManagedBean.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\jpaejb\CustomerFacade.java
+D:\Users\cwong12\Documents\NetBeansProjects\DoShoes\src\main\java\shop\doshoes\jpaejb\ProductFacade.java

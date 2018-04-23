@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Products</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="style.css" />
+        <b:container fluid="true">
+            <b:row>
+                <b:navBar position="top" sticky="true" brand="DoShoes" brandHref="#">
+                    <b:navbarLinks>
+                        <b:navLink value="Home" href="faces/index.xhtml"></b:navLink>
+                        <b:navLink value="Product" href="faces/product.xhtml"></b:navLink>
+                    </b:navbarLinks>
+                    <b:navbarLinks pull="right">
+                        <b:navLink iconAwesome="fa-shopping-cart" icon-align="right" value="Cart (#{cusBean.cart.size()})" href="faces/cart.xhtml"></b:navLink>
+                    </b:navbarLinks>                    
+                    <b:navbarLinks pull="right">
+                        <b:navLink rendered="#{empty cusBean.firstName}" iconAwesome="fa-user" icon-align="right" value="Sign In" href="faces/login.xhtml"></b:navLink>
+                        <b:navLink rendered="#{empty cusBean.firstName}" value="Register" href="faces/signup.xhtml"></b:navLink>
+                        <b:dropMenu rendered="#{not empty cusBean.firstName}" iconAwesome="fa-user" icon-align="right" value="Welcome #{cusBean.firstName}">'
+                            <h:form>
+                                <b:commandButton look="danger" value="Log Out" action="#{cusBean.logout()}" style="width:100%"></b:commandButton>
+                            </h:form>
+                        </b:dropMenu> 
+                    </b:navbarLinks>
+                </b:navBar>
+            </b:row>
+            
+            <b:row>
+                <h:form>
+                    <h:commandLink action="#{cusBean.getShoe(1001)}">
+                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/react-hyperdunk-the-ten.jpg" tooltip="React Hyperdunk The Ten"/>
+                    </h:commandLink>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="#{cusBean.getShoe(1002)}">
+                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/top-3-pick.jpg" tooltip="Top 3 Pick"/>
+                    </h:commandLink>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="#{cusBean.getShoe(1003)}">
+                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/air-jordan-1.jpg" tooltip="Air Jordan 1 The Ten"/>
+                    </h:commandLink>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="#{cusBean.getShoe(1004)}">
+                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/lance-mountain.jpg" tooltip="Lance Mountain"/>
+                    </h:commandLink>
+                </h:form>
+            </b:row>
+            <br/>
+            <b:row>
+                <h:form>
+                    <h:commandLink action="#{cusBean.getShoe(1005)}">
+                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/ultraboost-gray.jpg" tooltip="Ultraboost Gray"/>
+                    </h:commandLink>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="#{cusBean.getShoe(1006)}">
+                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/ultraboost-laceless.jpg" tooltip="Laceless Ultraboost"/>
+                    </h:commandLink>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="#{cusBean.getShoe(1007)}">
+                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/stan-smith.jpg" tooltip="Stan Smith"/>
+                    </h:commandLink>
+                </h:form>
+                <h:form>
+                    <h:commandLink action="#{cusBean.getShoe(1008)}">
+                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/dame.jpg" tooltip="The Dame"/>
+                    </h:commandLink>
+                </h:form>
+                
+<!--                <b:image offset="1" class="image-row" col-xs="12" col-sm="6" col-md="3" col-lg="3" value="resources/images/ultraboost-gray.jpg" tooltip="Ultraboost Gray"/>
+                <b:image class="image-row" col-xs="12" col-sm="6" col-md="4" col-lg="3" value="resources/images/ultraboost-laceless.jpg" tooltip="Laceless Ultraboost"/>
+                <b:image class="image-row" col-xs="12" col-sm="6" col-md="4" col-lg="3" value="resources/images/stan-smith.jpg" tooltip="Stan Smith"/>-->
+            </b:row>
+        </b:container>
+    </h:body>
+</html>
+
