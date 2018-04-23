@@ -23,12 +23,6 @@ import shop.doshoes.util.SessionUtils;
 @SessionScoped
 public class CustomerManagedBean implements Serializable {
 
-	/**
-	 * Creates a new instance of CustomerManagedBean
-	 */
-	public CustomerManagedBean() {
-	}
-	
 	private static final long serialVersionUID = 1094801825228386363L;
 	
 	private int custId;
@@ -40,6 +34,9 @@ public class CustomerManagedBean implements Serializable {
 	private String city;
 	private String state;
 	private int zip;
+        
+        public CustomerManagedBean() {
+	}
 
 	public int getCustId() {
 		return custId;
