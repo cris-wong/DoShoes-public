@@ -36,6 +36,7 @@ public class CustomerController implements Serializable {
 	public String validateCustomer() {
             Customer c = new Customer();
             c = custFacade.getValidUser(custBean);
+            System.out.println("customer login fn = " + c.getFirstname());
             if (c != null) {
                 custBean.setEmail(c.getEmail());
                 custBean.setFirstname(c.getFirstname());
@@ -49,7 +50,7 @@ public class CustomerController implements Serializable {
             
             return "index";
 	}
-	
+        
 	public List<Customer> getAll() {
             return custFacade.findAll();
 	}
@@ -74,7 +75,7 @@ public class CustomerController implements Serializable {
             c.setCity(custBean.getCity());
             c.setState(custBean.getState());
             c.setZip(custBean.getZip());
-
+            System.out.println("custBean's firstname " + custBean.getFirstname());
             custFacade.create(c);
 
             return "index";
