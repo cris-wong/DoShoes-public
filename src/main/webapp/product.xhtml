@@ -80,6 +80,24 @@
                 <b:image class="image-row" col-xs="12" col-sm="6" col-md="4" col-lg="3" value="resources/images/ultraboost-laceless.jpg" tooltip="Laceless Ultraboost"/>
                 <b:image class="image-row" col-xs="12" col-sm="6" col-md="4" col-lg="3" value="resources/images/stan-smith.jpg" tooltip="Stan Smith"/>-->
             </b:row>
+            <b:modal id="amodal" title="Product Details" styleClass="modalPseudoClass">
+                <h:form>
+                    <b:column medium-screen="3">
+                        <h:outputText value="XYZ" />
+                    </b:column>
+                    <br></br><br></br>
+                    <b:column medium-screen="3">
+                        <h:outputText value="Password" />
+                    </b:column>
+                    <h:inputSecret id="password" value="#{custBean.password}"></h:inputSecret>
+                    <h:message for="password"></h:message>
+                    <br></br><br></br>
+                     <b:commandButton action="#{customerController.validateCustomer()}" value="Log In"/>
+                     <b:button value="Cancel" look="primary"  dismiss="modal"/>
+
+                </h:form>
+               
+            </b:modal>
         </b:container>
     </h:body>
 </html>

@@ -21,10 +21,10 @@
                     </b:navbarLinks>                    
                     <b:navbarLinks pull="right">
                         <b:navLink>
-                            <button id="btrigger" class="btn btn-info btn-link" data-target="#amodal" data-toggle="modal">Log In</button>
+                            <button rendered="#{empty custBean.firstname}" id="btrigger" class="btn btn-info btn-link" data-target="#amodal" data-toggle="modal">Log In</button>
                         </b:navLink>
                         <b:navLink>
-                            <button id="btrigger" class="btn btn-info btn-link" data-target="#amodal1" data-toggle="modal">Register</button>
+                            <button rendered="#{empty custBean.firstname}" id="btrigger" class="btn btn-info btn-link" data-target="#amodal1" data-toggle="modal">Register</button>
                         </b:navLink>
                         
                         <b:dropMenu rendered="#{not empty custBean.firstname}" iconAwesome="fa-user" icon-align="right" value="Welcome #{custBean.firstname}">'
@@ -66,8 +66,21 @@
                         </b:carouselCaption>
                     </b:carouselItem>
                     
+                    <b:carouselItem>
+                        <img src="resources/images/addidas-tshirt.jpg" alt="Veteran's Day" class="carousel-image" />
+                        <b:carouselCaption>
+                            <h3>Adidas NMD XR1</h3>
+                            <p>In triple black.</p>
+                        </b:carouselCaption>
+                    </b:carouselItem>
 
-
+                    <b:carouselItem>
+                        <img src="resources/images/nikeT-shirt.jpg" alt="Veteran's Day" class="carousel-image" />
+                        <b:carouselCaption>
+                            <h3>Adidas NMD XR1</h3>
+                            <p>In triple black.</p>
+                        </b:carouselCaption>
+                    </b:carouselItem>
                 </b:carousel>
             </b:row>
             <hr/>
@@ -97,7 +110,7 @@
                 </h:form>
                 <f:facet name="footer">
                     <h:form>
-                        <b:commandButton action="#{custBean.validateEmailPassword}" value="Log In"/>
+                        <b:commandButton action="#{customerController.validateCustomer()}" value="Log In"/>
                         <b:button value="Cancel" look="primary"  dismiss="modal"/>
                     </h:form>
                 </f:facet>
@@ -112,7 +125,7 @@
                             <h:outputText value="First Name*" />
                         </b:column>
                         <b:column>
-                            <b:inputText placeholder="First Name*" id="firstName" required="true" value="#{custBean.firstName}">
+                            <b:inputText placeholder="First Name*" id="firstName" required="true" value="#{custBean.firstname}">
                             </b:inputText>
                         </b:column>
                     </b:row>
@@ -122,7 +135,7 @@
                             <h:outputText value="Last Name*" />
                         </b:column>
                         <b:column>
-                            <b:inputText placeholder="Last Name" id="lastName" required="true" value="#{custBean.lastName}">
+                            <b:inputText placeholder="Last Name" id="lastName" required="true" value="#{custBean.lastname}">
                             </b:inputText>
                         </b:column>
                     </b:row>
@@ -132,7 +145,7 @@
                             <h:outputText value="Username*" />
                         </b:column>
                         <b:column>
-                            <b:inputText placeholder="First Name" id="username" required="true" value="#{custBean.userName}">
+                            <b:inputText placeholder="First Name" id="username" required="true" value="#{custBean.email}">
                             </b:inputText>
                         </b:column>
                     </b:row>
@@ -181,8 +194,8 @@
 
                 <f:facet name="footer">
                     <h:form>
-                        <b:commandButton action="#{customerController.create(custBean)}" value="Register"/>
-                        <b:button value="Cancel" look="primary"  dismiss="amodal"/>
+                        <b:commandButton action="#{customerController.add()}" value="Register"/>
+                        <b:button value="Cancel" look="primary"  dismiss="modal"/>
                     </h:form>
                 </f:facet>
             </b:modal>
