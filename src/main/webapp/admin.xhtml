@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>DoShoes Admin</title>
+    </h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <h:body>
+        <h:outputStylesheet library="css" name="style.css" />
+        <b:container fluid="true">
+            <b:row>
+                <b:navBar position="top" sticky="true" brand="DoShoes" brandHref="#">
+                    <b:navbarLinks>
+                        <b:navLink value="Home" href="faces/index.xhtml"></b:navLink>
+                        <b:navLink value="Product" href="faces/product.xhtml"></b:navLink>
+
+                    </b:navbarLinks>
+                    <b:navbarLinks pull="right">
+
+                    </b:navbarLinks>                    
+                    <b:navbarLinks pull="right">
+                        <b:navLink>
+                            <button rendered="#{empty custBean.firstname}" id="btrigger" class="btn btn-info btn-link" data-target="#amodal" data-toggle="modal">Log In</button>
+                        </b:navLink>
+                        <b:navLink>
+                            <button rendered="#{empty custBean.firstname}" id="btrigger" class="btn btn-info btn-link" data-target="#amodal1" data-toggle="modal">Register</button>
+                        </b:navLink>
+
+                        <b:dropMenu rendered="#{not empty custBean.firstname}" iconAwesome="fa-user" icon-align="right" value="Welcome #{custBean.firstname}">'
+                            <h:form>
+                                <b:commandButton look="danger" value="Log Out" action="#{customerController.logout()}" style="width:100%"></b:commandButton>
+                            </h:form>
+                        </b:dropMenu> 
+                    </b:navbarLinks>
+                </b:navBar>
+
+            </b:row>
+            <b:row>
+                <b:panel>
+                    <h:outputLabel>Add New Products</h:outputLabel>
+                    <h:form>
+                        <b:panelGrid columns="2">
+
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Product Name" />
+                                </b:column>
+                                <h:inputText id="itemName" value="#"></h:inputText>
+                                <h:message for="itemName"></h:message>
+                            </b:row>
+                            <br></br><br></br>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Product Price" />
+                                </b:column>
+                                <h:inputText id="itemPrice" value="#"></h:inputText>
+                                <h:message for="itemPrice"></h:message>
+                            </b:row>
+                            <br></br><br></br>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Product Brand" />
+                                </b:column>
+                                <h:inputText id="itemBrand" value="#"></h:inputText>
+                                <h:message for="itemBrand"></h:message>
+                            </b:row>
+                            <br></br><br></br>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Product Category" />
+                                </b:column>
+                                <h:inputText id="itemCat" value="#"></h:inputText>
+                                <h:message for="itemCat"></h:message>
+                            </b:row>
+                            <br></br><br></br>
+                            <b:row>
+                                <b:commandButton action="#" look="success" value="Add Product"/>
+                            </b:row>
+                            <br></br><br></br>
+                        </b:panelGrid>
+                    </h:form>
+
+                </b:panel>
+
+            </b:row>
+            <b:row style="text-align: center">
+                <b:panel style="text-align: center">
+                    
+                        <h:outputLabel>Update Existing Products</h:outputLabel>
+                        <h:form>
+                            <b:panelGrid columns="2" >
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Product Name" />
+                                </b:column>
+                                <h:inputText id="itemName" value="#"></h:inputText>
+                                <h:message for="itemName"></h:message>
+                            </b:row>
+                            <br></br><br></br>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Product Price" />
+                                </b:column>
+                                <h:inputText id="itemPrice" value="#"></h:inputText>
+                                <h:message for="itemPrice"></h:message>
+                            </b:row>
+                            <br></br><br></br>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Product Brand" />
+                                </b:column>
+                                <h:inputText id="itemBrand" value="#"></h:inputText>
+                                <h:message for="itemBrand"></h:message>
+                            </b:row>
+                            <br></br><br></br>
+                            <b:row>
+                                <b:column medium-screen="2">
+                                    <h:outputText value="Product Category" />
+                                </b:column>
+                                <h:inputText id="itemCat" value="#"></h:inputText>
+                                <h:message for="itemCat"></h:message>
+                            </b:row>
+                            <br></br><br></br>
+                            <b:row>
+                                <b:commandButton action="#" look="success" value="Update Product"/>
+                            </b:row>
+                            <br></br><br></br>
+                            
+                            </b:panelGrid>
+                        </h:form>
+                    
+                    
+                </b:panel>
+                
+            </b:row>
+        </b:container>
+    </h:body>
+</html>

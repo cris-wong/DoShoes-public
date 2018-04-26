@@ -7,6 +7,7 @@
     <h:head>
         <title>Products</title>
     </h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <h:body>
         <h:outputStylesheet library="css" name="style.css" />
         <b:container fluid="true">
@@ -30,73 +31,97 @@
                     </b:navbarLinks>
                 </b:navBar>
             </b:row>
-            
             <b:row>
-                <h:form>
-                    <h:commandLink action="#{cusBean.getShoe(1001)}">
-                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/react-hyperdunk-the-ten.jpg" tooltip="React Hyperdunk The Ten"/>
-                    </h:commandLink>
-                </h:form>
-                <h:form>
-                    <h:commandLink action="#{cusBean.getShoe(1002)}">
-                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/top-3-pick.jpg" tooltip="Top 3 Pick"/>
-                    </h:commandLink>
-                </h:form>
-                <h:form>
-                    <h:commandLink action="#{cusBean.getShoe(1003)}">
-                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/air-jordan-1.jpg" tooltip="Air Jordan 1 The Ten"/>
-                    </h:commandLink>
-                </h:form>
-                <h:form>
-                    <h:commandLink action="#{cusBean.getShoe(1004)}">
-                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/lance-mountain.jpg" tooltip="Lance Mountain"/>
-                    </h:commandLink>
-                </h:form>
+                <b:panel>
+                    <b:panelGrid columns="4">
+                        <h:form>
+                            <h:commandLink action="#{cusBean.getShoe(1001)}">
+                                <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/react-hyperdunk-the-ten.jpg" tooltip="React Hyperdunk The Ten"/>
+                                <b:column><b:label text="Price : $$$" severity="info"/>
+                                    <button id="btrigger" class="btn btn-info btn-lg" data-target="#productModal" data-toggle="modal">Quick LookUp</button></b:column>
+                            </h:commandLink>
+                        </h:form>
+                        <h:form>
+                            <h:commandLink action="#{cusBean.getShoe(1002)}">
+                                <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/top-3-pick.jpg" tooltip="Top 3 Pick"/>
+                                <b:column><b:label text="Price : $$$" severity="info"/>
+                                    <button id="btrigger" class="btn btn-info btn-lg" data-target="#productModal" data-toggle="modal">Quick LookUp</button></b:column>
+                            </h:commandLink>
+                        </h:form>
+                        <h:form>
+                            <h:commandLink action="#{cusBean.getShoe(1003)}">
+                                <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/air-jordan-1.jpg" tooltip="Air Jordan 1 The Ten"/>
+                                <b:column><b:label text="Price : $$$" severity="info"/>
+                                    <button id="btrigger" class="btn btn-info btn-lg" data-target="#productModal" data-toggle="modal">Quick LookUp</button></b:column>
+                            </h:commandLink>
+                        </h:form>
+                        <h:form>
+                            <h:commandLink action="#{cusBean.getShoe(1004)}">
+                                <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/lance-mountain.jpg" tooltip="Lance Mountain"/>
+                                <b:column><b:label text="Price : $$$" severity="info"/>
+                                    <button id="btrigger" class="btn btn-info btn-lg" data-target="#productModal" data-toggle="modal">Quick LookUp</button></b:column>
+                            </h:commandLink>
+                        </h:form>
+                    </b:panelGrid>
+                </b:panel>
             </b:row>
+
             <br/>
             <b:row>
-                <h:form>
-                    <h:commandLink action="#{cusBean.getShoe(1005)}">
-                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/ultraboost-gray.jpg" tooltip="Ultraboost Gray"/>
-                    </h:commandLink>
-                </h:form>
-                <h:form>
-                    <h:commandLink action="#{cusBean.getShoe(1006)}">
-                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/ultraboost-laceless.jpg" tooltip="Laceless Ultraboost"/>
-                    </h:commandLink>
-                </h:form>
-                <h:form>
-                    <h:commandLink action="#{cusBean.getShoe(1007)}">
-                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/stan-smith.jpg" tooltip="Stan Smith"/>
-                    </h:commandLink>
-                </h:form>
-                <h:form>
-                    <h:commandLink action="#{cusBean.getShoe(1008)}">
-                        <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/dame.jpg" tooltip="The Dame"/>
-                    </h:commandLink>
-                </h:form>
-                
-<!--                <b:image offset="1" class="image-row" col-xs="12" col-sm="6" col-md="3" col-lg="3" value="resources/images/ultraboost-gray.jpg" tooltip="Ultraboost Gray"/>
-                <b:image class="image-row" col-xs="12" col-sm="6" col-md="4" col-lg="3" value="resources/images/ultraboost-laceless.jpg" tooltip="Laceless Ultraboost"/>
-                <b:image class="image-row" col-xs="12" col-sm="6" col-md="4" col-lg="3" value="resources/images/stan-smith.jpg" tooltip="Stan Smith"/>-->
+                <b:panel>
+                    <b:panelGrid columns="4">
+                        <h:form>
+                            <h:commandLink action="#{cusBean.getShoe(1005)}">
+                                <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/ultraboost-gray.jpg" tooltip="Ultraboost Gray"/>
+                                <b:column><b:label text="Price : $$$" severity="info"/>
+                                    <button id="btrigger" class="btn btn-info btn-lg" data-target="#productModal" data-toggle="modal">Quick LookUp</button></b:column>
+                            </h:commandLink>
+
+                        </h:form>
+                        <h:form>
+                            <h:commandLink action="#{cusBean.getShoe(1006)}">
+                                <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/ultraboost-laceless.jpg" tooltip="Laceless Ultraboost"/>
+                                <b:column><b:label text="Price : $$$" severity="info"/>
+                                    <button id="btrigger" class="btn btn-info btn-lg" data-target="#productModal" data-toggle="modal">Quick LookUp</button></b:column>
+                            </h:commandLink>
+
+                        </h:form>
+
+                        <h:form>
+                            <h:commandLink action="#{cusBean.getShoe(1007)}">
+                                <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/stan-smith.jpg" tooltip="Stan Smith"/>
+                                <b:column><b:label text="Price : $$$" severity="info"/>
+                                    <button id="btrigger" class="btn btn-info btn-lg" data-target="#productModal" data-toggle="modal">Quick LookUp</button></b:column>
+                            </h:commandLink>
+
+                        </h:form>
+                        <h:form>
+                            <h:commandLink action="#{cusBean.getShoe(1008)}">
+                                <b:image class="image-row" col-xs="12" col-sm="6" col-md="6" col-lg="3" value="resources/images/dame.jpg" tooltip="The Dame"/>
+                                <b:column><b:label text="Price : $$$" severity="info"/>
+                                    <button id="btrigger" class="btn btn-info btn-lg" data-target="#productModal" data-toggle="modal">Quick LookUp</button></b:column>
+                            </h:commandLink>
+
+                        </h:form>
+                    </b:panelGrid>
+                </b:panel>
             </b:row>
-            <b:modal id="amodal" title="Product Details" styleClass="modalPseudoClass">
+            <b:modal id="productModal" title="Product Details" styleClass="modalPseudoClass">
                 <h:form>
-                    <b:column medium-screen="3">
+                    <b:column medium-screen="6">
                         <h:outputText value="XYZ" />
                     </b:column>
                     <br></br><br></br>
-                    <b:column medium-screen="3">
-                        <h:outputText value="Password" />
+                    <b:column medium-screen="6">
+                        <b:label text="Price"/>
+                        <b:badge value="$ 122"/>
                     </b:column>
-                    <h:inputSecret id="password" value="#{custBean.password}"></h:inputSecret>
-                    <h:message for="password"></h:message>
                     <br></br><br></br>
-                     <b:commandButton action="#{customerController.validateCustomer()}" value="Log In"/>
-                     <b:button value="Cancel" look="primary"  dismiss="modal"/>
+                    <b:commandButton action="#" value="Add to Cart"/>
+                    <b:button value="Cancel" look="primary"  dismiss="modal"/>
 
                 </h:form>
-               
+
             </b:modal>
         </b:container>
     </h:body>
