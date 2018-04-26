@@ -11,6 +11,7 @@ import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.inject.Inject;
 import java.util.*;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import shop.doshoes.entities.Product;
 import shop.doshoes.jpaejb.ProductFacade;
@@ -40,5 +41,28 @@ public class ProductController implements Serializable {
     
     public int count() {
         return productFacade.count();
+    }
+    
+    public void insert() {
+        Product p = new Product();
+        p.setProductName(productBean.getProductName());
+        p.setProductPrice(productBean.getProductPrice());
+        p.setBrand(productBean.getBrand());
+        p.setCategory(productBean.getCategory());
+        productFacade.create(p);
+    }
+    
+    public String getByPID() {
+        Product p = new Product();
+        p = productFacade.find(productBean.getProductId());
+        if (p != null) {
+            productBean.setProductName(p.getProductName());
+            productBean.setProductPrice(p.getProductPrice());       
+            productBean.setBrand(p.getBrand());
+            productBean.setCategory(p.getCategory());
+        } else {
+            FacesContext.getCurrentInstance().addMessage("productSearch:productInput", new FacesMessage("No product with this ID found."));
+        }
+        return "findProductByID";
     }
 }

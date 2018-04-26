@@ -6,7 +6,9 @@
 package shop.doshoes.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,9 +16,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +38,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Product.findByBrand", query = "SELECT p FROM Product p WHERE p.brand = :brand")
     , @NamedQuery(name = "Product.findByCategory", query = "SELECT p FROM Product p WHERE p.category = :category")})
 public class Product implements Serializable {
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productId")
+    private Collection<Inventory> inventoryCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -135,6 +142,15 @@ public class Product implements Serializable {
     @Override
     public String toString() {
         return "shop.doshoes.entities.Product[ productId=" + productId + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Inventory> getInventoryCollection() {
+        return inventoryCollection;
+    }
+
+    public void setInventoryCollection(Collection<Inventory> inventoryCollection) {
+        this.inventoryCollection = inventoryCollection;
     }
     
 }

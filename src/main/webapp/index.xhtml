@@ -106,14 +106,9 @@
                     <h:inputSecret id="password" value="#{custBean.password}"></h:inputSecret>
                     <h:message for="password"></h:message>
                     <br></br><br></br>
-
+                    <b:commandButton action="#{customerController.validateCustomer()}" value="Log In"/>
+                    <b:button value="Cancel" look="primary"  dismiss="modal"/>
                 </h:form>
-                <f:facet name="footer">
-                    <h:form>
-                        <b:commandButton action="#{customerController.validateCustomer()}" value="Log In"/>
-                        <b:button value="Cancel" look="primary"  dismiss="modal"/>
-                    </h:form>
-                </f:facet>
             </b:modal>
             <b:modal id="amodal1" title="Register" styleClass="modalPseudoClass">
 
@@ -189,15 +184,9 @@
                             </b:inputText>
                         </b:column>
                     </b:row>
-
+                    <b:commandButton action="#{customerController.add()}" value="Register"/>
+                    <b:button value="Cancel" look="primary"  dismiss="modal"/>
                 </h:form>
-
-                <f:facet name="footer">
-                    <h:form>
-                        <b:commandButton action="#{customerController.add()}" value="Register"/>
-                        <b:button value="Cancel" look="primary"  dismiss="modal"/>
-                    </h:form>
-                </f:facet>
             </b:modal>
         </b:container>
         <br />

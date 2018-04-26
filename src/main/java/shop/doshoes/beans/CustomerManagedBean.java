@@ -23,7 +23,7 @@ import shop.doshoes.util.SessionUtils;
 @SessionScoped
 public class CustomerManagedBean implements Serializable {
 
-	private static final long serialVersionUID = 1094801825228386363L;
+	private static final long serialVersionUID = 1L;
 	
 	private int custId;
 	private String firstname;

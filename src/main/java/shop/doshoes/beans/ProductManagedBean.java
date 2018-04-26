@@ -13,7 +13,7 @@ import java.io.Serializable;
  *
  * @author Chris
  */
-@Named(value = "productManagedBean")
+@Named(value = "productBean")
 @SessionScoped
 public class ProductManagedBean implements Serializable {
 
