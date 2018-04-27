@@ -61,14 +61,16 @@ public class ProductFacade extends AbstractFacade<Product> {
         }
     }
     
-    public List<Product> findProductTitle(String title) {
-        List<Predicate> predicates = new ArrayList<Predicate>();
+    public List<Product> findProductName(String name) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Product> q = cb.createQuery(Product.class);
         Root<Product> product = q.from(Product.class);
-        predicates.add(cb.equal(product.get("title"), title));
-        q.select(product).where(predicates.toArray(new Predicate[]{}));
-                if (em.createQuery(q).getResultList().isEmpty()) {
+        String queryName = "%" + name + "%";
+        Predicate predicate = cb.like(product.<String>get("productName"), queryName);
+        q.select(product).where(predicate);
+//        predicates.add(cb.equal(product.get("productName"), name));
+//        q.select(product).where(predicates.toArray(new Predicate[]{}));
+        if (em.createQuery(q).getResultList().isEmpty()) {
             return null;
         } else {
             return em.createQuery(q).getResultList();

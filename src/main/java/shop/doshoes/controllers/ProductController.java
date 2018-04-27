@@ -66,4 +66,14 @@ public class ProductController implements Serializable {
         }
         return "findProductByID";
     }
+    
+    public List<Product> findByName() {
+        System.out.println("findByName2 = " + productBean.getProductName());
+        return productFacade.findProductName(productBean.getProductName());            
+    }
+    
+    public String redirectToResultsPage() {
+        System.out.println("findByName1 = " + productBean.getProductName());
+        return "searchResults";
+    }
 }

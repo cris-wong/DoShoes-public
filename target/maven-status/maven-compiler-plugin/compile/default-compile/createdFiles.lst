@@ -1,15 +1,16 @@
 shop\doshoes\controllers\CustomerController.class
 shop\doshoes\jpaejb\CustOrderFacade.class
+shop\doshoes\controllers\CartController.class
 shop\doshoes\controllers\InventoryController.class
 shop\doshoes\jpaejb\CartFacade.class
 shop\doshoes\jpaejb\InventoryFacade.class
 shop\doshoes\controllers\ProductController.class
 shop\doshoes\entities\Customer.class
-shop\doshoes\entities\CartItem.class
+shop\doshoes\beans\CartItemManagedBean.class
 shop\doshoes\entities\OrderDetailPK.class
-shop\doshoes\jpaejb\CartItemFacade.class
 shop\doshoes\beans\CustomerManagedBean.class
 shop\doshoes\jpaejb\AbstractFacade.class
+shop\doshoes\beans\CartManagedBean.class
 shop\doshoes\beans\ProductManagedBean.class
 shop\doshoes\entities\CustOrder.class
 shop\doshoes\jpaejb\CustomerFacade.class
@@ -19,6 +20,5 @@ shop\doshoes\controllers\CustOrderController.class
 shop\doshoes\jpaejb\ProductFacade.class
 shop\doshoes\entities\Product.class
 shop\doshoes\entities\Cart.class
-shop\doshoes\entities\CartItemPK.class
 shop\doshoes\beans\CustOrderManagedBean.class
 shop\doshoes\entities\OrderDetail.class

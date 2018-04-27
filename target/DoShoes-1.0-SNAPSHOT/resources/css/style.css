@@ -27,16 +27,24 @@ width: 100%;
     margin: 0px;
 }
 
+.container-fluid {
+	margin-top: -6px;
+}
+
 .navbar.navbar-inverse {
   background-color: #000;
   /*color: white;*/
   background-image: none;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   border-radius: 0px;
 }
 
 .navbar.navbar-inverse a {
     color: #fff;
+}
+
+#subNav {
+	margin-top: 0px;
 }
 
 .section {
@@ -70,4 +78,20 @@ width: 100%;
 
 .submit {
     background-color: #33cc33;
+}
+
+.ui-panel {
+	border-style: none;
+}
+
+.product-title {
+	padding-left: 20px;
+}
+
+#itemImage:hover {
+	transform: scale(2); 
+}
+
+#itemImage {
+	transition: transform .2s;
 }

@@ -6,7 +6,6 @@
 package shop.doshoes.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,11 +14,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -40,11 +37,6 @@ import javax.xml.bind.annotation.XmlTransient;
 	, @NamedQuery(name = "Customer.findByState", query = "SELECT c FROM Customer c WHERE c.state = :state")
 	, @NamedQuery(name = "Customer.findByZip", query = "SELECT c FROM Customer c WHERE c.zip = :zip")})
 public class Customer implements Serializable {
-
-    @OneToMany(mappedBy = "custId")
-    private Collection<CustOrder> custOrderCollection;
-    @OneToMany(mappedBy = "custId")
-    private Collection<Cart> cartCollection;
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -180,23 +172,5 @@ public class Customer implements Serializable {
 	public String toString() {
 		return "shop.doshoes.entities.Customer[ custId=" + custId + " ]";
 	}
-
-    @XmlTransient
-    public Collection<CustOrder> getCustOrderCollection() {
-        return custOrderCollection;
-    }
-
-    public void setCustOrderCollection(Collection<CustOrder> custOrderCollection) {
-        this.custOrderCollection = custOrderCollection;
-    }
-
-    @XmlTransient
-    public Collection<Cart> getCartCollection() {
-        return cartCollection;
-    }
-
-    public void setCartCollection(Collection<Cart> cartCollection) {
-        this.cartCollection = cartCollection;
-    }
 	
 }
