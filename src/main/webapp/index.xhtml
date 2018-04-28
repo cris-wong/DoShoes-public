@@ -12,21 +12,14 @@
         <h:outputStylesheet library="css" name="style.css" />
         <b:container fluid="true">`
             <b:row>
-                <b:navBar position="top" sticky="true" brand="DoShoes" brandHref="#">
+                <b:navBar position="top" sticky="true" brand="DoShoes" brandHref="#" inverse="true">
                     <b:navbarLinks>
                         <b:navLink value="Home" href="faces/index.xhtml"></b:navLink>
-                        <b:navLink value="Product" href="faces/product.xhtml"></b:navLink>
+                        <b:navLink value="Product" href="faces/products.xhtml"></b:navLink>
 
-                        <form class="navbar-form navbar-left hidden-md hidden-sm hidden-xs" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" />
-                            </div>
-                            <button type="submit" class="btn btn-default">Search</button>
-                        </form>
+                        
                     </b:navbarLinks>
-                    <b:navbarLinks pull="right">
-
-                    </b:navbarLinks>                    
+                    
                     <b:navbarLinks pull="right">
                         <b:navLink>
                             <button rendered="#{empty custBean.firstname}" id="btrigger" class="btn btn-info btn-link" data-target="#amodal" data-toggle="modal">Log In</button>
@@ -45,13 +38,25 @@
 
             </b:row>
             <b:row>
-                <b:navBar  brandHref="#" inverse="true">
+                <b:navBar id="subNav" brandHref="#" inverse="true">
                     <b:navbarLinks>
                         <b:navLink value="Shoes" href="product.xhtml"></b:navLink>
                         <b:navLink value="Accessories" href="product.xhtml"></b:navLink>
                         <b:navLink value="Admin" href="admin.xhtml"></b:navLink>
+						
                     </b:navbarLinks>
+					<b:navbarLinks pull="right">
+					<h:form class="navbar-form navbar-left hidden-md hidden-sm hidden-xs" role="search">
+						<div class="form-group">
+							<b:inputText type="text" class="form-control" value="#{productBean.productName}"/>
+						</div>
+						<b:commandButton type="submit" class="btn btn-default" action="#{productController.redirectToResultsPage()}">
+							Search
+						</b:commandButton>
+					</h:form>
+				</b:navbarLinks>
                 </b:navBar>
+				
             </b:row>
 
             <b:row>
