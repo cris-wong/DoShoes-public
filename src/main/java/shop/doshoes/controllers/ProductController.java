@@ -76,4 +76,27 @@ public class ProductController implements Serializable {
         System.out.println("findByName1 = " + productBean.getProductName());
         return "searchResults";
     }
+    
+    public void edit(Product p) {
+            productBean.setProductId(p.getProductId());
+            productBean.setProductName(p.getProductName());
+            productBean.setProductPrice(p.getProductPrice());
+            productBean.setProductImage(p.getProductImage());
+            productBean.setCategory(p.getCategory());
+            productBean.setBrand(p.getBrand());
+    }
+    
+            
+    public String save() {
+            Product p = new Product();
+            p.setProductName(productBean.getProductName());
+            p.setProductPrice(productBean.getProductPrice());
+            p.setProductImage(productBean.getProductImage());
+            p.setCategory(productBean.getCategory());
+            p.setBrand(productBean.getBrand());            
+
+            productFacade.edit(p);
+
+            return "products";
+    }
 }
