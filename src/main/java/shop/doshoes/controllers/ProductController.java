@@ -50,6 +50,7 @@ public class ProductController implements Serializable {
         p.setProductPrice(productBean.getProductPrice());
         p.setBrand(productBean.getBrand());
         p.setCategory(productBean.getCategory());
+        p.setSize(productBean.getSize());
         productFacade.create(p);
     }
     
@@ -84,6 +85,7 @@ public class ProductController implements Serializable {
             productBean.setProductImage(p.getProductImage());
             productBean.setCategory(p.getCategory());
             productBean.setBrand(p.getBrand());
+            productBean.setSize(p.getSize());
     }
     
             
@@ -93,7 +95,8 @@ public class ProductController implements Serializable {
             p.setProductPrice(productBean.getProductPrice());
             p.setProductImage(productBean.getProductImage());
             p.setCategory(productBean.getCategory());
-            p.setBrand(productBean.getBrand());            
+            p.setBrand(productBean.getBrand()); 
+            p.setSize(productBean.getSize());
 
             productFacade.edit(p);
 

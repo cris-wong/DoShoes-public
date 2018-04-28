@@ -87,44 +87,45 @@ and open the template in the editor.
                     </b:panel>
                 </b:accordion>
 
-                
+
             </b:row>
-            <b:panel  title="Update Existing Project">
+            
 
-                        <h:form>
-                            <b:dataTable value="#{productController.getAll()}" var="product">
-                                <b:dataTableColumn>
-                                    <f:facet name="header">Product ID</f:facet>
-                                        #{product.productId}
-                                </b:dataTableColumn>
-                                <b:dataTableColumn>
-                                    <f:facet name="header">Product Name</f:facet>
-                                        #{product.productName}
-                                </b:dataTableColumn>
-                                <b:dataTableColumn>                   
-                                    <f:facet name="header">Product Price</f:facet>
-                                        #{product.productPrice}
-                                </b:dataTableColumn>
-                                <b:dataTableColumn>
-                                    <f:facet name="header">Product Image</f:facet>
-                                    <img src="#{product.productImage}" alt="" height="50" width="50"></img>
-                                </b:dataTableColumn>
-                                <b:dataTableColumn>
-                                    <f:facet name="header">Brand</f:facet>
-                                        #{product.brand}
-                                </b:dataTableColumn>
-                                <b:dataTableColumn>
-                                    <f:facet name="header">Category</f:facet>
-                                        #{product.category}
-                                </b:dataTableColumn>
-                                <b:dataTableColumn>
-                                    <button  class="btn btn-info btn-info" action="#{productController.edit(product)}" data-target="#updateModal" data-toggle="modal">Edit</button>
-                                </b:dataTableColumn>
-                            </b:dataTable>
+                <h:form>
+                    <b:dataTable value="#{productController.getAll()}" var="product">
+                        <b:dataTableColumn>
+                            <f:facet name="header">Product ID</f:facet>
+                                #{product.productId}
+                        </b:dataTableColumn>
+                        <b:dataTableColumn>
+                            <f:facet name="header">Product Name</f:facet>
+                                #{product.productName}
+                        </b:dataTableColumn>
+                        <b:dataTableColumn>                   
+                            <f:facet name="header">Product Price</f:facet>
+                                #{product.productPrice}
+                        </b:dataTableColumn>
+                        <b:dataTableColumn>
+                            <f:facet name="header">Product Image</f:facet>
+                            <img src="#{product.productImage}" alt="" height="50" width="50"></img>
+                        </b:dataTableColumn>
+                        <b:dataTableColumn>
+                            <f:facet name="header">Brand</f:facet>
+                                #{product.brand}
+                        </b:dataTableColumn>
+                        <b:dataTableColumn>
+                            <f:facet name="header">Category</f:facet>
+                                #{product.category}
+                        </b:dataTableColumn>
+                        <b:dataTableColumn>
+                            <button  class="btn btn-info btn-info" action="#{productController.edit(product)}" data-target="#updateModal" data-toggle="modal">Edit</button>
+                        </b:dataTableColumn>
+                    </b:dataTable>
 
-                        </h:form>
-                    </b:panel>
-            <b:modal id="updateModal" title="Update Product" styleClass="modalPseudoClass">
+                </h:form>
+            
+            
+            <b:modal id="updateModal" title="Update Product">
                 <h:form>
                     <b:panelGrid columns="2" >
                         <b:row>

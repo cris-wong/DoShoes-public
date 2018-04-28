@@ -23,6 +23,15 @@ public class ProductManagedBean implements Serializable {
     private String productImage;
     private String brand;
     private String category;
+    private String size;
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
 
     public int getProductId() {
         return productId;
