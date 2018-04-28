@@ -9,7 +9,7 @@
     </h:head>
     <h:body>
         <h:outputStylesheet library="css" name="style.css" />
-        <b:container fluid="true">
+        <b:container>
             <b:row>
                 <b:navBar position="top" sticky="true" brand="DoShoes" brandHref="#">
                     <b:navbarLinks>
@@ -20,9 +20,9 @@
                         <b:navLink iconAwesome="fa-shopping-cart" icon-align="right" value="Cart (#{cusBean.cart.size()})" href="faces/cart.xhtml"></b:navLink>
                     </b:navbarLinks>                    
                     <b:navbarLinks pull="right">
-                        <b:navLink rendered="#{empty cusBean.firstName}" iconAwesome="fa-user" icon-align="right" value="Sign In" href="faces/login.xhtml"></b:navLink>
-                        <b:navLink rendered="#{empty cusBean.firstName}" value="Register" href="faces/signup.xhtml"></b:navLink>
-                        <b:dropMenu rendered="#{not empty cusBean.firstName}" iconAwesome="fa-user" icon-align="right" value="Welcome #{cusBean.firstName}">'
+                        <b:navLink rendered="#{empty custBean.firstname}" iconAwesome="fa-user" icon-align="right" value="Sign In" href="faces/login.xhtml"></b:navLink>
+                        <b:navLink rendered="#{empty custBean.firstname}" value="Register" href="faces/signup.xhtml"></b:navLink>
+                        <b:dropMenu rendered="#{not empty cusBean.firstname}" iconAwesome="fa-user" icon-align="right" value="Welcome #{cusBean.firstName}">'
                             <h:form>
                                 <b:commandButton look="danger" value="Log Out" action="#{cusBean.logout()}" style="width:100%"></b:commandButton>
                             </h:form>
@@ -30,7 +30,7 @@
                     </b:navbarLinks>
                 </b:navBar>
             </b:row>
-            <h1>#{cusBean.name}</h1>
+            <h1>#{productBean.productName}</h1>
             <b:row>
                 <h:form>
                 <b:image class="image-row" col-xs="12" col-sm="12" col-md="6" col-lg="6" value="resources/images/#{cusBean.image}"/>
