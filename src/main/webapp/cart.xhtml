@@ -3,118 +3,92 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Cart</title>
         <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     </h:head>
     <h:body>
-        <h:outputStylesheet library="css" name="style.css" />
-        <b:container fluid="true">      
-            <b:row>
-                <b:navBar position="top" sticky="true" brand="SneakerShop" brandHref="#" inverse="true">
-                    <b:navbarLinks>
-                        <b:navLink value="Home" href="faces/index.xhtml"></b:navLink>
-                        <b:navLink value="Product" href="faces/product.xhtml"></b:navLink>
-                    </b:navbarLinks>
-                    <b:navbarLinks pull="right">
-                        <b:navLink iconAwesome="fa-shopping-cart" icon-align="right" value="Cart (#{cusBean.cart.size()})" href="faces/cart.xhtml"></b:navLink>
-                    </b:navbarLinks>                    
-                    <b:navbarLinks pull="right">
-                        <b:navLink rendered="#{empty cusBean.firstName}" iconAwesome="fa-user" icon-align="right" value="Sign In" href="faces/login.xhtml"></b:navLink>
-                        <b:navLink rendered="#{empty cusBean.firstName}" value="Register" href="faces/signup.xhtml"></b:navLink>
-                        <b:dropMenu rendered="#{not empty cusBean.firstName}" iconAwesome="fa-user" icon-align="right" value="Welcome #{cusBean.firstName}">'
-                            <h:form>
-                                <b:commandButton look="danger" value="Log Out" action="#{cusBean.logout()}" style="width:100%"></b:commandButton>
-                            </h:form>
-                        </b:dropMenu> 
-                    </b:navbarLinks>
-                </b:navBar>
-            </b:row>
-            <h1>Your Cart</h1>
+		<ui:composition template="./WEB-INF/templates/layout.xhtml">
+            <ui:define name="content">
+				<h:outputStylesheet library="css" name="style.css" />
 
+				<b:container>
+					<h1>Your Cart</h1>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+						<div align="right" col-md="5">
+							<!-- Identify your business so that you can collect the payments. -->
+							<input type="hidden" name="business" value="shweta.kumari2502@gmail.com"/>
+							<!-- Specify a Buy Now button. -->
+							<input type="hidden" name="cmd" value="_xclick"/>
+							<!-- Specify details about the item that buyers will purchase. -->
+							<h:dataTable value="#{cartController.productsInCart}" var="item" id="cart" styleClass="table table-striped table-bordered"
+										 style="width:100%">  
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Product Image" />
+									</f:facet>
+									<h:graphicImage style="width:50px;height:50px" value="#{item.productImage}" />
+								</h:column>
 
-            <h:dataTable value="#{cusBean.cart}" var="item" id="cart" styleClass="table table-striped table-bordered"
-                         style="width:100%">     
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Product Name" />
+									</f:facet>
+									<h:outputText value="#{item.productName}" />
+									<input type="hidden" name="item_name" value="#{item.productName}"/>
 
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Shoe" />
-                    </f:facet>
-                    <h:outputText value="#{item.name}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Shoe Size" />
-                    </f:facet>
-                    <h:outputText value="#{item.shoesize}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Quantity" />
-                    </f:facet>
-                    <h:outputText value="#{item.quantity}" />
-                </h:column>         
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Price" />
-                    </f:facet>
-                    <h:outputText value="#{item.price}" />
-                    
-                    <f:facet name="footer">
-                        <h:panelGroup style="display:block; text-align:left">
-                            <h:outputText value="Total: #{cusBean.orderTotal}" />
-                        </h:panelGroup>
-                    </f:facet>
-                </h:column>                
-            </h:dataTable>
-            <h:form>
-                <div align="right" col-md="5">
-                    <b:commandButton styleClass="submit" action="#{cusBean.deleteCart()}" look="danger" value="Empty Cart" />
-                    <b:commandButton styleClass="submit" action="#{cusBean.insertOrder()}" look="success" value="Submit Order" />
-                    
-                </div>
-                <div id="paypal-button"></div>
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Product Price" />
+									</f:facet>
+									<h:outputText value="$#{item.productPrice}" />
+									<input type="hidden" name="amount" value="#{cartManagedBean.cartTotal}"/>
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Product Brand" />
+									</f:facet>
+									<h:outputText value="#{item.brand}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Product Category" />
+									</f:facet>
+									<h:outputText value="#{item.category}" />
 
-  <script>
-    paypal.Button.render({
-      env: 'production', // Or 'sandbox',
+									<f:facet name="footer">
+										<h:panelGroup style="display:block; text-align:left">
+											<h:outputText style="font-weight:bold" value="Total: $#{cartManagedBean.cartTotal}" />
+										</h:panelGroup>
+									</f:facet>
+								</h:column>
 
-      commit: true, // Show a 'Pay Now' button
+								<input type="hidden" name="currency_code" value="USD"/>                       
+								<!-- Prompt buyers to enter the quantities they want. -->
+								<input type="hidden" name="undefined_quantity" value="2"/>
+							</h:dataTable>
 
-      style: {
-        color: 'gold',
-        size: 'small'
-      },
-
-      payment: function(data, actions) {
-        /* 
-         * Set up the payment here 
-         */
-      },
-
-      onAuthorize: function(data, actions) {
-        /* 
-         * Execute the payment here 
-         */
-      },
-
-      onCancel: function(data, actions) {
-        /* 
-         * Buyer cancelled the payment 
-         */
-      },
-
-      onError: function(err) {
-        /* 
-         * An error occurred during the transaction 
-         */
-      }
-    }, '#paypal-button');
-  </script>
-            </h:form>
-        </b:container>
-        
+							<!-- Display the payment button. -->
+							<b:link action="#{cartController.submitOrder()}">
+								<input type="image" name="submit" border="0"
+									   src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+									   alt="Pay with PayPal"/>
+								<img alt="" border="0" width="1" height="1"
+									 src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" />
+								<!-- <button styleClass="submit"  look="danger" value="Empty Cart" />-->
+							</b:link>
+						</div>
+					</form>
+					<h:form>
+						<b:commandButton id="empty-cart-btn" action="#{cartController.emptyCart()}" value="Empty Cart" look="danger"></b:commandButton>
+					</h:form>
+				</b:container>
+				<br/>
+			</ui:define>
+		</ui:composition>
     </h:body>
 </html>
 

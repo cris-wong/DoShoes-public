@@ -46,6 +46,7 @@ public class ProductController implements Serializable {
     
     public void insert() {
         Product p = new Product();
+		p.setProductImage(productBean.getProductImage());
         p.setProductName(productBean.getProductName());
         p.setProductPrice(productBean.getProductPrice());
         p.setBrand(productBean.getBrand());
@@ -72,13 +73,25 @@ public class ProductController implements Serializable {
         System.out.println("findByName2 = " + productBean.getProductName());
         return productFacade.findProductName(productBean.getProductName());            
     }
+	
+	public List<Product> findAllNike() {
+		return productFacade.findProductName("Nike");
+	}
+	
+	public List<Product> findAllAdidas() {
+		return productFacade.findProductName("Adidas");
+	}
+	
+	public List<Product> findAllJordans() {
+		return productFacade.findProductName("Jordan");
+	}
     
     public String redirectToResultsPage() {
         System.out.println("findByName1 = " + productBean.getProductName());
         return "searchResults";
     }
     
-    public void edit(Product p) {
+    public String edit(Product p) {
             productBean.setProductId(p.getProductId());
             productBean.setProductName(p.getProductName());
             productBean.setProductPrice(p.getProductPrice());
@@ -86,11 +99,16 @@ public class ProductController implements Serializable {
             productBean.setCategory(p.getCategory());
             productBean.setBrand(p.getBrand());
             productBean.setSize(p.getSize());
+			
+			return "updateProduct";
     }
     
             
     public String save() {
             Product p = new Product();
+			System.out.println("product details " + productBean.getProductName());
+			System.out.println("product price " + productBean.getProductPrice());
+			p.setProductId(productBean.getProductId());
             p.setProductName(productBean.getProductName());
             p.setProductPrice(productBean.getProductPrice());
             p.setProductImage(productBean.getProductImage());
@@ -98,8 +116,17 @@ public class ProductController implements Serializable {
             p.setBrand(productBean.getBrand()); 
             p.setSize(productBean.getSize());
 
-            productFacade.edit(p);
+            productFacade.updateProduct(p);
 
-            return "products";
+            return "admin";
+    }
+    
+    public List<Product> getClothes() {
+        return productFacade.findCategory("Clothing");
+        
+    }
+    
+    public List<Product> getShoes() {
+        return productFacade.findCategory("Shoes");
     }
 }

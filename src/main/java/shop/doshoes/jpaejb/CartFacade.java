@@ -5,10 +5,18 @@
  */
 package shop.doshoes.jpaejb;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.criteria.*;
+import javax.persistence.metamodel.EntityType;
+import javax.persistence.metamodel.Metamodel;
 import shop.doshoes.entities.Cart;
+import shop.doshoes.entities.Product;
 
 /**
  *
@@ -28,5 +36,26 @@ public class CartFacade extends AbstractFacade<Cart> {
     public CartFacade() {
         super(Cart.class);
     }
-    
+
+    public List<Product> getProductsInCart() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Product> q = cb.createQuery(Product.class);
+
+        Root<Product> p = q.from(Product.class);
+
+        Join<Product, Cart> join = p.join("cartCollection");
+        q.select(p);
+
+//        for (Product pro : em.createQuery(q).getResultList()) {
+//            System.out.println("Products here " + pro.getProductName());
+//        }
+        return em.createQuery(q).getResultList();
+    }
+
+    public void deleteAll() {
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaDelete<Cart> del = cb.createCriteriaDelete(Cart.class);
+		Root e = del.from(Cart.class);
+        this.em.createQuery(del).executeUpdate();
+    }
 }

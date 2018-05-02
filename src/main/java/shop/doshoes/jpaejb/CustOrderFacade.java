@@ -29,4 +29,19 @@ public class CustOrderFacade extends AbstractFacade<CustOrder> {
         super(CustOrder.class);
     }
     
+//	public List<CustOrder> findOrderId( name) {
+//        CriteriaBuilder cb = em.getCriteriaBuilder();
+//        CriteriaQuery<Product> q = cb.createQuery(Product.class);
+//        Root<Product> product = q.from(Product.class);
+//        String queryName = "%" + name + "%";
+//        Predicate predicate = cb.like(product.<String>get("productName"), queryName);
+//        q.select(product).where(predicate);
+////        predicates.add(cb.equal(product.get("productName"), name));
+////        q.select(product).where(predicates.toArray(new Predicate[]{}));
+//        if (em.createQuery(q).getResultList().isEmpty()) {
+//            return null;
+//        } else {
+//            return em.createQuery(q).getResultList();
+//        }
+//    }
 }

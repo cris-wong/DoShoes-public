@@ -1,27 +1,28 @@
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\jpaejb\CustomerFacade.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\controllers\CartController.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\beans\CartManagedBean.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\jpaejb\CustOrderFacade.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\beans\InventoryManagedBean.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\controllers\ProductController.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\jpaejb\CartFacade.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\jpaejb\InventoryFacade.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\entities\OrderDetail.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\jpaejb\ProductFacade.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\entities\OrderDetailPK.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\dao\LoginDAO.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\controllers\CustomerController.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\util\SessionUtils.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\jpaejb\AbstractFacade.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\beans\CustomerManagedBean.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\entities\Customer.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\beans\CustOrderManagedBean.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\entities\CustOrder.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\beans\CartItemManagedBean.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\controllers\InventoryController.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\controllers\CustOrderController.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\entities\Product.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\entities\Cart.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\entities\Inventory.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\beans\ProductManagedBean.java
-D:\Users\cwong12\Desktop\DoShoes\src\main\java\shop\doshoes\util\DataConnect.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\beans\CartManagedBean.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\controllers\ProductController.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\jpaejb\CustomerFacade.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\jpaejb\OrderDetailFacade.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\dao\LoginDAO.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\beans\CustOrderManagedBean.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\util\DataConnect.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\jpaejb\CartFacade.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\entities\OrderDetailPK.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\controllers\CustOrderController.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\jpaejb\InventoryFacade.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\controllers\InventoryController.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\jpaejb\ProductFacade.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\controllers\CustomerController.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\entities\CustOrder.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\entities\OrderDetail.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\entities\Inventory.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\beans\ProductManagedBean.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\beans\InventoryManagedBean.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\entities\Product.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\jpaejb\AbstractFacade.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\entities\Cart.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\jpaejb\CustOrderFacade.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\beans\CartItemManagedBean.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\entities\Customer.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\util\SessionUtils.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\controllers\CartController.java
+D:\Users\Chris\Desktop\DoShoes_updated 5-1\DoShoes_updated\src\main\java\shop\doshoes\beans\CustomerManagedBean.java

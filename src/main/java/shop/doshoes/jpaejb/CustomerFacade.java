@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
@@ -64,4 +65,15 @@ public class CustomerFacade extends AbstractFacade<Customer> {
             return em.createQuery(q).getResultList().get(0);
         }
     }
+	
+	public String updatePassword(Customer c) {
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaUpdate<Customer> update = cb.createCriteriaUpdate(Customer.class);
+		Root<Customer> customer = update.from(Customer.class);
+		update.set(customer.get("password"), c.getPassword());
+		update.where(cb.equal(customer.get("email"), c.getEmail()));
+		em.createQuery(update).executeUpdate();
+		
+		return "index?faces-redirect=true";
+	}
 }

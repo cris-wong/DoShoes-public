@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -26,8 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
 	@NamedQuery(name = "Cart.findAll", query = "SELECT c FROM Cart c")
-	, @NamedQuery(name = "Cart.findByCartId", query = "SELECT c FROM Cart c WHERE c.cartId = :cartId")
-	, @NamedQuery(name = "Cart.findByProductId", query = "SELECT c FROM Cart c WHERE c.productId = :productId")})
+	, @NamedQuery(name = "Cart.findByCartId", query = "SELECT c FROM Cart c WHERE c.cartId = :cartId")})
 public class Cart implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -36,8 +37,9 @@ public class Cart implements Serializable {
     @Basic(optional = false)
     @Column(name = "cart_id")
 	private Integer cartId;
-	@Column(name = "product_id")
-	private Integer productId;
+	@JoinColumn(name = "product_id", referencedColumnName = "product_id")
+    @ManyToOne
+	private Product productId;
 
 	public Cart() {
 	}
@@ -54,11 +56,11 @@ public class Cart implements Serializable {
 		this.cartId = cartId;
 	}
 
-	public Integer getProductId() {
+	public Product getProductId() {
 		return productId;
 	}
 
-	public void setProductId(Integer productId) {
+	public void setProductId(Product productId) {
 		this.productId = productId;
 	}
 

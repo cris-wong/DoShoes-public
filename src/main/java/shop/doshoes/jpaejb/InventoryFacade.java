@@ -41,5 +41,5 @@ public class InventoryFacade extends AbstractFacade<Inventory> {
         q.select(i).where(predicate);
         return em.createQuery(q).getResultList();
     }
-    
+  
 }

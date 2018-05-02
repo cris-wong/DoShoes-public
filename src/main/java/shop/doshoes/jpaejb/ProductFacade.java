@@ -33,7 +33,7 @@ public class ProductFacade extends AbstractFacade<Product> {
         super(Product.class);
     }
     
-    public List<Product> findClothes(String category) {
+    public List<Product> findCategory(String category) {
         List<Predicate> predicates = new ArrayList<Predicate>();
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Product> q = cb.createQuery(Product.class);
@@ -76,5 +76,21 @@ public class ProductFacade extends AbstractFacade<Product> {
             return em.createQuery(q).getResultList();
         }
     }
+	
+	public void updateProduct(Product p) {
+		System.out.println("Product ID = " + p.getProductId());
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaUpdate<Product> update = cb.createCriteriaUpdate(Product.class);
+		Root<Product> product = update.from(Product.class);
+		update
+				.set(product.get("productName"), p.getProductName())
+				.set(product.get("productPrice"), p.getProductPrice())
+				.set(product.get("productImage"), p.getProductImage())
+				.set(product.get("brand"), p.getBrand())
+				.set(product.get("category"), p.getCategory())
+				.set(product.get("size"), p.getSize());
+		update.where(cb.equal(product.get("productId"), p.getProductId()));
+		em.createQuery(update).executeUpdate();
+	}
     
 }
